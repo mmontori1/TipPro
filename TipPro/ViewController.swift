@@ -45,7 +45,11 @@ class ViewController: UIViewController {
             billAmountField.text = ""
             tipAmountField.text = ""
             totalAmountField.text = ""
-        }
+        }        
+    }
+    
+    @IBAction func lowerKeypad(_ sender: Any) {
+        billAmountField.endEditing(true)
     }
     
     override func viewDidLoad() {
@@ -61,6 +65,5 @@ class ViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
 }
 

@@ -48,13 +48,16 @@ class ViewController: UIViewController {
         }        
     }
     
-    @IBAction func lowerKeypad(_ sender: Any) {
-        billAmountField.endEditing(true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector (ViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard(){
+        if billAmountField.isEditing {
+            billAmountField.endEditing(true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
